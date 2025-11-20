@@ -342,9 +342,9 @@
                 <span class="text-fluid-base font-bold tracking-widest group-hover:text-yr-red transition-colors whitespace-nowrap">Y / R / A /</span>
             </a>
 
-            <!-- 需求 2: 手機版漢堡選單按鈕 -->
-            <!-- 在 md (平板/桌面) 以上隱藏，僅在移動端顯示 -->
-            <button id="hamburger-btn" onclick="toggleMobileMenu()" class="z-50 md:hidden text-yr-black focus:outline-none p-2">
+            <!-- 需求 2 & 修正: 手機版漢堡選單按鈕 -->
+            <!-- 將 md:hidden 改為 lg:hidden，確保平板端也能顯示漢堡選單 -->
+            <button id="hamburger-btn" onclick="toggleMobileMenu()" class="z-50 lg:hidden text-yr-black focus:outline-none p-2">
                 <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path class="hamburger-line line-1" d="M4 6H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     <path class="hamburger-line line-2" d="M4 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -352,10 +352,11 @@
                 </svg>
             </button>
 
-            <!-- Desktop Navigation Container (md:flex 顯示，移動端 hidden 隱藏) -->
-            <div class="hidden md:flex items-center">
+            <!-- Desktop Navigation Container -->
+            <!-- 將 hidden md:flex 改為 hidden lg:flex，確保平板端隱藏桌面選單 -->
+            <div class="hidden lg:flex items-center">
                 <!-- Desktop Menu (CN) -->
-                <nav id="nav-cn" class="flex gap-[3vw] md:gap-10 lang-nav hidden items-center mr-6 md:mr-10">
+                <nav id="nav-cn" class="flex gap-[3vw] lg:gap-10 lang-nav hidden items-center mr-6 lg:mr-10">
                     <a href="#philosophy-cn" class="text-fluid-sm font-medium tracking-widest text-gray-500 hover:text-yr-red link-underline whitespace-nowrap">/ 底蘊 /</a>
                     <a href="#structure-cn" class="text-fluid-sm font-medium tracking-widest text-gray-500 hover:text-yr-red link-underline whitespace-nowrap">/ 架構 /</a>
                     <a href="#projects-cn" class="text-fluid-sm font-medium tracking-widest text-gray-500 hover:text-yr-red link-underline whitespace-nowrap">/ 作品 /</a>
@@ -363,7 +364,7 @@
                 </nav>
                 
                  <!-- Desktop Menu (EN) -->
-                 <nav id="nav-en" class="flex gap-[3vw] md:gap-10 lang-nav hidden items-center mr-6 md:mr-10">
+                 <nav id="nav-en" class="flex gap-[3vw] lg:gap-10 lang-nav hidden items-center mr-6 lg:mr-10">
                     <a href="#philosophy-en" class="text-fluid-xs font-medium tracking-widest text-gray-500 hover:text-yr-red uppercase link-underline whitespace-nowrap">/ Philosophy /</a>
                     <a href="#structure-en" class="text-fluid-xs font-medium tracking-widest text-gray-500 hover:text-yr-red uppercase link-underline whitespace-nowrap">/ Structure /</a>
                     <a href="#projects-en" class="text-fluid-xs font-medium tracking-widest text-gray-500 hover:text-yr-red uppercase link-underline whitespace-nowrap">/ Projects /</a>
@@ -371,7 +372,7 @@
                 </nav>
 
                 <!-- Social Links -->
-                <div class="flex gap-4 items-center border-l border-gray-300 pl-4 md:pl-6">
+                <div class="flex gap-4 items-center border-l border-gray-300 pl-4 lg:pl-6">
                     <a href="https://www.facebook.com/yroom.tc" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yr-red transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[4vw] h-[4vw] max-w-[20px] max-h-[20px]">
                             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
