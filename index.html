@@ -112,11 +112,8 @@
                     if(document.getElementById('all-projects-overlay').classList.contains('open')) {
                         window.openAllProjects(); 
                     }
-                    // Update main page projects if needed
-                    if (currentLang) {
-                         // Re-render main page project previews to reflect potential updates
-                         renderFrontendProjects(projects);
-                    }
+                    // Update main page projects
+                    renderFrontendProjects(projects);
                 }
             }, (err) => console.error("Projects sync error", err));
 
@@ -330,7 +327,6 @@
                     <a href="#contact-en" class="text-fluid-xs font-medium tracking-widest text-gray-500 hover:text-yr-red uppercase link-underline whitespace-nowrap">/ Contact /</a>
                 </nav>
                 <div class="flex gap-4 items-center border-l border-gray-300 pl-4 lg:pl-6">
-                    <!-- Social Icons (Same as before) -->
                     <a href="https://www.facebook.com/yroom.tc" target="_blank" class="text-gray-400 hover:text-yr-red transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
                     <a href="https://www.instagram.com/yroom.tw/" target="_blank" class="text-gray-400 hover:text-yr-red transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
                 </div>
@@ -340,7 +336,6 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu">
-        <!-- (Same Mobile Nav as before) -->
         <nav id="mobile-nav-cn" class="flex flex-col gap-8 text-center items-center hidden">
             <a href="#philosophy-cn" onclick="toggleMobileMenu()" class="text-fluid-xl font-light tracking-widest text-yr-black hover:text-yr-red">/ 底蘊 /</a>
             <a href="#structure-cn" onclick="toggleMobileMenu()" class="text-fluid-xl font-light tracking-widest text-yr-black hover:text-yr-red">/ 架構 /</a>
@@ -355,7 +350,7 @@
         </nav>
     </div>
 
-    <!-- Overlays (Transition, All Projects, Detail) -->
+    <!-- Overlays -->
     <div id="transition-overlay">
         <div id="trans-logo-arch" class="w-[30vw] h-[30vw] max-w-[200px] max-h-[200px] text-yr-black hidden">
              <svg viewBox="81800 47660 2020 1860" xmlns="http://www.w3.org/2000/svg" class="w-full h-full"><g><polygon class="trans-svg-path" stroke="currentColor" fill="none" points="83165.26,49195.46 83819.67,48295.75 83819.67,47666.28 83165.26,48565.99 "/><polygon class="trans-svg-path" stroke="currentColor" fill="none" points="83819.67,47666.28 82840.72,47666.28 82840.72,48295.75 83360.03,48295.75 "/><polygon class="trans-svg-path" stroke="currentColor" fill="none" points="82896.49,48614.18 81802.49,47666.75 81802.49,48565.31 82896.49,49512.74 "/><polygon class="trans-svg-path" stroke="currentColor" fill="none" points="83165.26,48565.99 83165.26,49195.46 83514.69,49497.96 83514.69,48868.49 "/></g></svg>
@@ -369,7 +364,8 @@
         <div onclick="closeAllProjects()" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div>
         <div class="w-full px-[4vw] py-[10vh]">
             <h2 class="text-fluid-xl font-light tracking-widest text-yr-black mb-12 text-center">ALL PROJECTS</h2>
-            <div id="projects-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[3vw] gap-y-[5vh]"></div>
+            <!-- Modified Grid Gap for Mobile -->
+            <div id="projects-grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[3vw] gap-y-10 md:gap-y-[5vh]"></div>
         </div>
     </div>
 
@@ -411,7 +407,6 @@
                 </div>
             </section>
             <section id="structure-cn" class="py-[10vh] px-[4vw] bg-yr-white scroll-mt-20">
-                <!-- (Structure content unchanged - simplified for brevity in this context but kept in DOM) -->
                 <div class="w-full animate-on-scroll">
                     <div class="text-center mb-[5vh]"><h2 class="text-fluid-xl font-light tracking-widest text-yr-black">品牌架構</h2></div>
                     <div class="flex flex-col md:flex-row justify-center items-stretch w-full gap-4 md:gap-0">
@@ -435,8 +430,8 @@
                         <div><h2 class="text-fluid-xl font-light tracking-widest text-yr-black">近期作品</h2></div>
                         <button onclick="openAllProjects()" class="text-fluid-xs font-bold text-yr-red tracking-widest border-b border-yr-red pb-1 whitespace-nowrap hover:text-yr-black hover:border-yr-black transition-colors">查看全部</button>
                     </div>
-                    <!-- Main Page shows first 2 projects dynamically -->
-                    <div id="featured-projects-cn" class="grid grid-cols-1 md:grid-cols-2 gap-[4vw]">
+                    <!-- Main Page Preview -->
+                    <div id="featured-projects-cn" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[4vw]">
                         <!-- Injected by JS -->
                     </div>
                 </div>
@@ -451,7 +446,7 @@
             </section>
         </div>
 
-        <!-- EN (Similar structure, simplified for example) -->
+        <!-- EN -->
         <div id="content-en" class="lang-section">
              <section id="hero-en" class="relative h-[100dvh] flex flex-col justify-center items-center text-center px-6">
                 <div class="animate-on-scroll">
@@ -478,9 +473,8 @@
                 </div>
             </section>
              <section id="structure-en" class="py-[10vh] px-[4vw] bg-yr-white scroll-mt-20">
-                <!-- Structure EN same as CN logic, omitted for space -->
                 <div class="w-full animate-on-scroll text-center mb-[5vh]"><h2 class="text-fluid-xl font-light tracking-widest text-yr-black">Structure</h2></div>
-                <!-- Wings... -->
+                 <!-- Structure Content same as CN logic, omitted for space -->
              </section>
              <section id="projects-en" class="py-[10vh] bg-white scroll-mt-20">
                 <div class="w-full px-[4vw]">
@@ -488,7 +482,7 @@
                         <div><h2 class="text-fluid-xl font-light tracking-widest text-yr-black">Selected Projects</h2></div>
                         <button onclick="openAllProjects()" class="text-fluid-xs font-bold text-yr-red tracking-widest border-b border-yr-red pb-1 whitespace-nowrap hover:text-yr-black hover:border-yr-black transition-colors">VIEW ALL</button>
                     </div>
-                    <div id="featured-projects-en" class="grid grid-cols-1 md:grid-cols-2 gap-[4vw]"></div>
+                    <div id="featured-projects-en" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[4vw]"></div>
                 </div>
              </section>
              <section id="contact-en" class="py-[15vh] px-[4vw] text-center bg-yr-white border-t border-gray-200 scroll-mt-20">
@@ -582,7 +576,6 @@
                 document.getElementById('main-content').classList.remove('hidden');
                 switchLanguage(lang);
                 checkScroll();
-                // Render projects initially from loaded data
                 if(window.projectsData) renderFrontendProjects(window.projectsData);
             }, 800);
         }
@@ -642,18 +635,16 @@
 
         // --- Dynamic Rendering Functions ---
 
-        // 1. Text Content
         window.renderTexts = () => {
             const texts = window.siteTexts || {};
             document.querySelectorAll('[data-text-key]').forEach(el => {
                 const key = el.getAttribute('data-text-key');
-                if(texts[key]) el.innerHTML = texts[key]; // Use innerHTML for <br> support
+                if(texts[key]) el.innerHTML = texts[key];
             });
         };
 
-        // 2. Projects List
+        // Updated Project Render Function with Better Mobile Layout
         function renderFrontendProjects(data) {
-            // Main Page Preview (First 2 real projects)
             const realProjects = data.filter(p => !p.isComingSoon);
             const previewProjects = realProjects.slice(0, 2);
             const cnContainer = document.getElementById('featured-projects-cn');
@@ -662,7 +653,8 @@
             const createCard = (p) => `
                 <div class="group cursor-pointer animate-on-scroll is-visible" onclick="openProjectDetail('${p.id}')">
                     <div class="aspect-[4/3] bg-gray-100 overflow-hidden relative">
-                        <img src="${p.image}" class="w-full h-full object-cover transition-transform duration-700 grayscale group-hover:grayscale-0">
+                        <!-- Mobile: Color (grayscale-0) / Desktop: Grayscale (md:grayscale) -->
+                        <img src="${p.image}" class="w-full h-full object-cover transition-transform duration-700 grayscale-0 md:grayscale md:group-hover:grayscale-0">
                         <div class="absolute top-4 left-4 bg-yr-black text-white text-[10px] px-2 py-1 tracking-widest">${p.tag}</div>
                     </div>
                     <div class="mt-[2vh]">
@@ -693,7 +685,8 @@
                 return `
                     <div class="project-card group cursor-pointer" onclick="openProjectDetail('${p.id}')">
                         <div class="aspect-[4/3] bg-gray-100 overflow-hidden relative">
-                            <img src="${p.image}" class="project-img w-full h-full object-cover transition-transform duration-700 grayscale group-hover:grayscale-0">
+                            <!-- Mobile: Color / Desktop: Grayscale -->
+                            <img src="${p.image}" class="project-img w-full h-full object-cover transition-transform duration-700 grayscale-0 md:grayscale md:group-hover:grayscale-0">
                             <div class="absolute top-4 left-4 bg-yr-black text-white text-[10px] px-2 py-1 tracking-widest">${p.tag}</div>
                         </div>
                         <div class="mt-[2vh]">
@@ -718,7 +711,6 @@
             const project = data.find(p => p.id == id);
             if (!project) return;
 
-            // Transition Animation
             const transOverlay = document.getElementById('transition-overlay');
             document.getElementById('trans-logo-arch').classList.add('hidden');
             document.getElementById('trans-logo-room').classList.add('hidden');
@@ -730,7 +722,6 @@
             transOverlay.classList.add('active');
             setTimeout(() => transOverlay.classList.add('trans-anim-active'), 50);
 
-            // Data Populate
             currentProjectImages = project.images && project.images.length > 0 ? project.images : [project.image];
             
             setTimeout(() => {
