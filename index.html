@@ -85,7 +85,7 @@
         const placeholderImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100' fill='%23f5f5f5'%3E%3Crect width='100' height='100'/%3E%3Cpath d='M50 50a15 15 0 1 0 0-30 15 15 0 0 0 0 30zm0 8c-18 0-30 10-30 20v5h60v-5c0-10-12-20-30-20z' fill='%23cccccc'/%3E%3C/svg%3E";
 
         window.initialProjects = [
-             { id: "0", title: "House.C", type: "Single Family Residence", location: "Nantou, Taiwan", year: "2020", designBy: "@yroom.tw", photography: "@cch.tw", tag: "YE/RI", image: "https://images.unsplash.com/photo-1517555832075-973b0783c86f?q=80&w=1000&auto=format&fit=crop", images: ["https://images.unsplash.com/photo-1517555832075-973b0783c86f?q=80&w=1000&auto=format&fit=crop"], description: "結廬在人境，而無車馬喧..." },
+             { id: "0", title: "House.C", type: "Single Family Residence", location: "Nantou, Taiwan", year: "2020", designBy: "@yroom.tw", photography: "@cch.tw", tag: "YE/RI", image: "https://images.unsplash.com/photo-1517555832075-973b0783c86f?q=80&w=1000&auto=format&fit=crop", images: ["https://images.unsplash.com/photo-1517555832075-973b0783c86f?q=80&w=1000&auto=format&fit=crop"], description: "結廬在人境，而無車馬喧 <br> -東晉 陶潛 《飲酒詩　其五》<br> 居所，這座漂浮在時間河流中的孤島，是我們抵禦外界的堡壘，也是我們靈魂的棲息地。我們相信，一個量身打造的空間，不僅僅是磚瓦的堆砌，更是生活藝術的結晶。它就像是一座私人的煉金術工廠，將平凡的日常轉化為瑰麗的奇幻。 <br> " },
              { id: "1", title: "Quiet Light House", type: "Apartment", location: "Taipei", year: "2021", designBy: "@yroom", photography: "@cch", tag: "Y/ROOM", image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop", images: ["https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1000&auto=format&fit=crop"], description: "光是空間的詩。" },
              { id: "10", title: "Coming Soon", type: "Future", tag: "Y/R/A", isComingSoon: true }
         ];
@@ -93,17 +93,17 @@
         window.initialTexts = {
             "hero-title-cn": "肇於意，成於形",
             "hero-subtitle-cn": "FROM VISION TO FORM",
-            "hero-desc-cn": "YR ATELIER (Y.R.A.) 一個跨領域設計品牌。<br>它不僅是一個結合建築與室內設計的工作體系，更是一種思維方式 ——<br>在秩序與自由、形與留白、光與影之間尋找平衡。",
+            "hero-desc-cn": "YR ATELIER (Y.R.A.) <br> <span class='text-yr-black font-medium'> －個跨領域設計品牌。<br>它不僅是一個結合建築與室內設計的工作體系，<br>更是一種思維方式<br>在秩序與自由、形與留白、光與影之間尋找平衡。",
             "philo-title-cn": "{ / }",
             "philo-subtitle-cn": "在分界之間，找到自由。",
-            "philo-text-1-cn": "「 / 」是一個分界符號，也是一種意識狀態。一側代表向外的創造力與光；另一側則代表向內的覺知與靜度。",
-            "philo-text-2-cn": "「肇於意，成於形」-我們追求著是起心動念的那一瞬的靈光乍現。建築與室內的界線，是我們思考的起點。",
+            "philo-text-1-cn": "「 / 」是一個分界符號，也是一種意識狀態。 <br> 一側代表向外的創造力與光； <br> 另一側則代表向內的覺知與靜度。 <br>",
+            "philo-text-2-cn": "「肇於意，成於形」- <br> 實現起心動念的那一瞬的靈光乍現，是我們思考的起點。",
             "hero-subtitle-en": "FROM VISION TO FORM.",
-            "hero-desc-en": "YR ATELIER (Y.R.A.) <br><span class='text-yr-black font-medium'>A multidisciplinary design brand. It is not merely a practice integrating architecture and interior design, but a mindset.</span>",
+            "hero-desc-en": "YR ATELIER (Y.R.A.) <br> <span class='text-yr-black font-medium'> A multidisciplinary design brand. <br>It is not merely a practice integrating architecture and interior design.</span>",
             "philo-title-en": "{ / }",
             "philo-subtitle-en": "Clarity and Calm.",
-            "philo-text-1-en": "「 / 」 is a symbol of threshold and a state of awareness. The slash \"/\" between them is not a divide, but a path of flow.",
-            "philo-text-2-en": "“FROM VISION TO FORM”—we pursue that fleeting moment of inspiration."
+            "philo-text-1-en": "「 / 」 is a symbol of threshold and a state of awareness. <br> The slash 「 / 」 between them is not a divide, but a path of flow. <br>",
+            "philo-text-2-en": "“FROM VISION TO FORM” —  <br> we pursue that fleeting moment of inspiration. ",
         };
 
         window.initialLeaders = {
@@ -357,16 +357,15 @@
                 <div class="w-full px-[4vw]">
                     <div class="flex justify-between items-end mb-[5vh] animate-on-scroll">
                         <div><h2 class="text-fluid-xl font-light tracking-widest text-yr-black">近期作品</h2></div>
-                        <button onclick="openAllProjects()" class="text-fluid-xs font-bold text-yr-red tracking-widest border-b border-yr-red pb-1 whitespace-nowrap hover:text-yr-black hover:border-yr-black transition-colors">查看全部</button>
+                        <button onclick="openAllProjects()" class="text-fluid-sm font-bold text-yr-red tracking-widest border-b border-yr-red pb-1 whitespace-nowrap hover:text-yr-black hover:border-yr-black transition-colors">查看全部</button>
                     </div>
                     <div id="featured-projects-cn" class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-[4vw]"></div>
                 </div>
             </section>
             <section id="contact-cn" class="py-[15vh] px-[4vw] text-center bg-yr-white border-t border-gray-200 scroll-mt-20">
                 <div class="w-full animate-on-scroll">
-                    <h2 class="text-fluid-2xl font-light tracking-widest text-yr-black mb-[3vh]">從構想到形體</h2>
-                    <h3 class="text-fluid-lg font-light tracking-widest text-gray-500 mb-[3vh]">肇於意，成於形</h3>
-                    <p class="text-gray-500 font-light tracking-widest leading-loose mb-[3vh] text-fluid-sm">我們相信空間的核心，不在於區隔，而在於連結。<br>在理性與詩性之間，尋找思想的留白。</p>
+                    <h2 class="text-fluid-2xl font-light tracking-widest text-yr-black mb-[3vh]">肇於意，成於形</h2>
+                    <p class="text-gray-500 font-light tracking-widest leading-loose mb-[3vh] text-fluid-sm">我們相信空間的核心，不在於區隔，而在於連結。<br>讓我們團隊幫您實現</p>
                     <button onclick="openContactModal()" class="inline-block bg-yr-red text-white px-[3vw] py-[2vh] text-fluid-xs font-bold tracking-[0.2em] hover:bg-yr-black transition-colors duration-300 mt-8">開始對話</button>
                 </div>
             </section>
